@@ -1,0 +1,108 @@
+<script src="__PUBLIC__/static/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!--引用UE文件-->
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/ueditor.all.js"> </script>
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script><div class="box box-primary">
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">修改文章</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('news2/editcase', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+  
+	 <table class="table table-bordered table-striped">
+          <div class="form-group">
+            <input type="hidden" name="article_id" value="{php}echo $data1['article_id'];{/php}">
+          </div>
+          <tr class="form-group">
+            <td width="200px"><label for="article_title">文章标题</label></td>
+            <td><input type="text" name="article_title" id="case_title" style="width:60%;" value="{php}echo $data1['article_title'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="article_matter">内容简介</label></td>
+            <td><input type="text" name="article_matter" id="article_matter" style="width:60%;" value="{php}echo $data1['article_matter'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="article_body">内容</label></td>
+            <td><script id="editor" name="article_body" type="text/plain" style="width:80%;height:125px;" >{php}echo $data1['article_body'];{/php}</script></td>
+          </tr>
+           <tr class="form-group">
+            <td><label for="catid">所属分类id{php}echo $data1['catid'];{/php}</label></td>
+            <td><select name="catid" id="catid" style="width:60%;">
+			<option value="">请选择</option>
+			{$options}
+			    </select>
+			</td>
+          </tr>
+		  <script>
+		  document.getElementById('catid').value="{php}echo $data1['catid'];{/php}";
+		  </script>
+		  <tr class="form-group">
+                <td><label for="exampleInputFile">缩略图</label></td>
+                <td><input type="file" id="thumb" name="thumb"></td>
+                <!--<p class="help-block">图片上传</p>-->
+          </tr>
+		  <tr class="form-group">
+            <td><label for="toptime">置顶时间</label></td>
+            <td><input type="text" name="toptime" id="toptime" style="width:60%;" value="{php}echo $data1['toptime'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="click">浏览次数</label></td>
+            <td><input type="text" name="click" id="click" style="width:60%;" value="{php}echo $data1['click'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="writer">作者</label></td>
+            <td><input type="text" name="writer" id="writer" style="width:60%;" value="{php}echo $data1['writer'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="source">来源</label></td>
+            <td><input type="text" name="source" id="source" style="width:60%;" value="{php}echo $data1['source'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="link_url">外链地址</label></td>
+            <td><input type="text" name="link_url" id="link_url" style="width:60%;" value="{php}echo $data1['link_url'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="updater">信息修改人员</label></td>
+            <td><input type="text" name="updater" id="updater" style="width:60%;" value="{php}echo $data1['updater'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="updatetime">信息修改时间</label></td>
+            <td>{$time|date="Y-m-d H:i:s",###}</td>
+          </tr>
+            <tr class="form-group">
+                <td><label for="status">信息状态</label></td>
+                <td><select name="status">
+                <option value ="1" selected>正常</option>
+                <option value ="0">异常</option>
+                </select></td>
+            </tr>
+
+		  </table>
+		  
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="box-footer">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" class="btn btn-success radius" value="重置" style="background-color:red"/>
+        </div>
+
+          </form>
+        </div><!-- /.box-body -->
+</div>
+</div>
+<script>
+        <!--初始化UE-->
+        $(function() {
+            var ue = UE.getEditor('editor');
+        });
+
+        $(function() {
+            var ue = UE.getEditor('editor');
+        });
+         function doSubmit() {
+        document.getElementById('form-user-character-add').submit();
+    }
+</script>

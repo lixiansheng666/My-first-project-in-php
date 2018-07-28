@@ -1,0 +1,52 @@
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">增加角色</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('role/addrole', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="id"></label>
+          </div>
+          <div class="form-group">
+            <label for="name">角色名称</label>
+            <input type="text" name="name" id="name">
+          </div>
+            <div class="form-group">
+                <label for="status">信息状态</label>
+                <select name="status">
+                <option value ="1" selected>正常</option>
+                <option value ="0">异常</option>
+                <select>
+            </div>
+
+          <div class="form-group">
+            <label for="remark">备注</label>
+            <textarea name="remark" id="remark"></textarea>
+          </div>
+		  <h3>选择节点</h3>
+		<table class="table">
+		{foreach $list as $v1}
+		<td><input type="checkbox" name="items[]" value="{$v1.id}">{$v1.title}</td>
+			<tr class="success">
+				{foreach $v1['childrens'] as $v2}
+					<td><input type="checkbox" name="items[]"value="{$v2.id}">{$v2.title}</td>
+				{/foreach}
+			</tr>
+
+		{/foreach}
+		</table>
+
+        </div><!-- /.box-body -->
+
+        <div class="box-footer">
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    function doSubmit() {
+        document.getElementById('form-user-character-add').submit();
+    }
+</script>

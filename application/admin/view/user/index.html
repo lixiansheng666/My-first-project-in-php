@@ -1,0 +1,71 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">
+            用户列表
+            <a class="label label-primary" href="{php}echo url('user/adduser', array('id'=>$arr['id']));{/php}">增加用户</a>
+			<!--<a class="label label-primary" href="javascript:;" onclick="datadel()"><font color="red">批量删除</font></a>-->
+        </h3>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+			 <th><input type="checkbox" id="check" />&nbsp;全选</th>
+                <th>编号</th>
+                <th>用户名</th>
+				<th>真实姓名</th>
+				<th>创建时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+			<form name="form2" role="form2" id="form2" method="post" action="" enctype="multipart/form-data" >
+			{foreach $result as $v}
+                <tr>
+				    <td><input type="checkbox" id="check" name="items[]" value=""></td>
+                    <td>{$v.userid}</td>
+					<td>{$v.username}</td>
+					<td>{$v.realname}</td>
+					<td>{$v.createtime|date="Y-m-d H:i:s",###}</td>
+					<td>
+					<a href="{php}echo url('user/edituser',array('id'=>$v['userid']),'html');{/php}">修改</a>&nbsp;&nbsp;
+					<a href="{php}echo url('user/deluser', array('id'=>$v['userid']),'html');{/php}">删除</a>&nbsp;&nbsp;
+					</td>
+                </tr>
+            {/foreach}
+			</form>
+            </tbody>
+            <tfoot>
+                <!--<tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>-->
+            </tfoot>
+        </table>
+    </div><!-- /.box-body -->
+</div>
+<!--分页-->
+<script type="text/javascript">
+document.getElementById('check').onclick=function()  
+        {  
+         // 获取当前页所有的复选框  
+            var checkElements=document.getElementsByName('items[]');  
+            if (this.checked) {  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked="checked";  
+                }  
+ 
+            }  
+            else{  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked=null;  
+                }  
+            } 
+        } 
+	
+</script>

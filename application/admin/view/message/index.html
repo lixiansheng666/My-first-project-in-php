@@ -1,0 +1,75 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">
+            留言列表
+			<!--<a class="label label-primary" href="javascript:;" onclick="datadel()"><font color="red">批量删除</font></a>-->
+        </h3>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+			 <th><input type="checkbox" id="check" />&nbsp;全选</th>
+                <th>编号</th>
+                <th>昵称</th>
+				<th>真实姓名</th>
+				<th>性别</th>
+				<th>邮箱</th>
+				<th>电话</th>
+				<th>内容</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+			<form name="form2" role="form2" id="form2" method="post" action="{php}echo url('news/delalllists'){/php}" enctype="multipart/form-data" >
+			{foreach $result as $v}
+                <tr>
+				    <td><input type="checkbox" id="check" name="items[]" value=""></td>
+                    <td>{$v.message_id}</td>
+					<td>{$v.nickname}</td>
+					<td>{$v.realname}</td>
+					<td>{php}if($v['sex'] == '1'){echo '男';}elseif($v['sex'] == '2'){echo '女';}{/php}</td>
+					<td>{$v.email}</td>
+					<td>{$v.mobile}</td>
+					<td>{$v.message_body}</td>
+					<td>
+					<a href="{php}echo url('message/delnode', array('id'=>$v['message_id']),'html');{/php}">删除</a>
+					</td>
+                </tr>
+            {/foreach}
+			</form>
+            </tbody>
+            <tfoot>
+                <!--<tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>-->
+            </tfoot>
+        </table>
+    </div><!-- /.box-body -->
+</div>
+<!--分页-->
+<script type="text/javascript">
+document.getElementById('check').onclick=function()  
+        {  
+         // 获取当前页所有的复选框  
+            var checkElements=document.getElementsByName('items[]');  
+            if (this.checked) {  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked="checked";  
+                }  
+ 
+            }  
+            else{  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked=null;  
+                }  
+            } 
+        } 
+	
+</script>

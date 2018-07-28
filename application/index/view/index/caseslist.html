@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>大连做网站,大连网站建设,大连网络推广-领超科技大连网络营销专家</title>
+    <meta name="keywords" content="大连做网站公司,大连网站建设,大连网络推广,大连网站优化,大连网页设计,大连做网站,大连做网页,大连做推广" />
+    <meta name="description" content="大连做网站首选领超科技,多年大连网站建设(网页设计制作)、大连网络推广(网站优化营销)经验.精英技术团队,高品质服务,电话:4000411891 " />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="__PUBLIC__/static/new/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/new/style/inner.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="../../templets/Scripts/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="__PUBLIC__/static/new/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/inner.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="box">
+        <a href="http://www.dllingchao.com/" title="大连网站建设公司"><img src="__PUBLIC__/static/new/images/cases/logo_cases.png" alt="领超设计出品" /></a>
+        <div class="wechat">
+            <img src="__PUBLIC__/static/new/images/cases/wechat_code.jpg" alt="扫描关注大连领超微信公众账号" class="wechat" /><p>扫一扫微信二维码<i></i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{php}echo url('index/index',[]);{/php}">领超首页</a></li>
+                <li class='active'><a href="{php}echo url('index/caseslist', []);{/php}" style='color:white;'>设计案例</a></li>
+                <li><a href="{php}echo url('index/newslist', []);{/php}">文章动态</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        高端定制，品牌设计<br /><u>2009 - 2016</u>作品集<br /><a href="http://www.dllingchao.com/" target="_blank">大连领超科技发展有限公司</a>
+    </footer>
+</header>
+
+<section class="toolbar"> <a href="../../demo442.dede58.html" title="返回首页" class="homelink"><span class="glyphicon glyphicon-chevron-left"></span></a> <span class="switch glyphicon glyphicon-th-list"></span>
+   <div class="category btn-group">
+        <a href="{php}echo url('Index/caseslist',array('id'=>0));{/php}" class="btn btn-default btn-primary">全部</a>
+		    {foreach $result as $v}
+        <a href="{php}echo url('Index/caseslist',array('id'=>$v['catid']));{/php}" class="btn btn-default">{$v.cat_name}</a>
+            {/foreach}
+   </div>
+</section>
+
+<section class="caselist content">
+
+    <ul class="items list-inline">
+	{foreach $result2 as $v}
+        <li> <a href="{php}echo url('Index/case1',array('id'=>$v['case_id']));{/php}" target="_blank"> <img src="__PUBLIC__/static/Upload/header/20150403/{$v.thumb}" alt="{$v.case_title}" />
+            <p>{$v.case_matter}<br />
+                <strong>{$v.case_title}</strong><br />
+            </p>
+        </a> 
+		</li>
+	{/foreach}
+    </ul>
+    <!--<div id="Paging" class="paging">
+        <div class="">
+            <span> 共1 页 页次:1/1 页</span><span class='nolink'>首页</span><span class='nolink'>上一页</span><span><font color=red>1</font></span><span class='nolink'>下一页</span><span class='nolink'>尾页</span> 转到 <SELECT NAME="select" ONCHANGE="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" ><option value=/caseslist/list-26-1.html  selected=selected>1</option></SELECT>
+        </div>
+    </div>-->
+<div><tr>{$result2->render(1)}</tr></div>
+</section>
+<div class="dock">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+        <li class="tel"> <i></i>
+            <p>建站咨询热线<br />
+                400-0411-891</p>
+        </li>
+        <li class="im"> <i></i>
+            <p><a href="" target="_blank">点我，建站咨询</a></p>
+        </li>
+    </ul>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?a821a161aa4214f5ff5b8ca372960ebb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

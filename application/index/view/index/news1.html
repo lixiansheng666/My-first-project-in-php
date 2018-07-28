@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>大连网站建设如何让你的网站更高端</title>
+    <meta name="keywords" content="大连网站建设，大连高端网站建设，大连网站建设公司" />
+    <meta name="description" content="精良的网站界面制大连网站建设界面制作的是否精良体现在网页设计中，粗造的网页设计会使得整个网站界面都显得低端难看，所以高端的网站必须要保证网页设计的精致美观。高度清晰的网页图片网站中无论什么样的图片首先" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="__PUBLIC__/static/new/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/new/style/inner.min.css" rel="stylesheet" />
+    <script src="__PUBLIC__/static/new/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/inner.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="box">
+        <a href="http://www.dllingchao.com/" title="大连网站建设公司"><img src="__PUBLIC__/static/new/images/logo_cases.png" alt="大连做网站" /></a>
+        <div class="wechat">
+            <img src="__PUBLIC__/static/new/images/wechat_code.jpg" alt="扫描关注大连领超微信公众账号" class="wechat" /><p>扫一扫微信二维码<i></i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{php}echo url('index/index', []);{/php}">领超首页</a></li>
+                <li><a href="{php}echo url('index/caseslist', []);{/php}">设计案例</a></li>
+                <li class='active'><a href="{php}echo url('index/newslist', []);{/php}" style='color:white;'>文章动态</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        高端定制，品牌设计<br /><u>2009 - 2016</u>作品集<br /><a href="http://www.dllingchao.com/" target="_blank">大连领超科技发展有限公司</a>
+    </footer>
+</header>
+<section class="toolbar"> <a href="/" title="返回首页" class="homelink"><span class="glyphicon glyphicon-chevron-left"></span></a> <span class="switch glyphicon glyphicon-th-list"></span>
+    <div class="btnList">
+	
+        <div class="link btn-group"> <a href="{php}echo url('index/newslist', []);{/php}" class="btn btn-default">文章列表</a> </div>
+        {php}       if($p){      {/php}
+		<div class="link btn-group"> <a href="{php}echo url('index/news1',array('id'=>$p['article_id']));{/php}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span>PREV</a> </div>
+        {php}        }else{      {/php}
+		<div class="link btn-group"> <a href="###" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span>PREV</a> </div>
+        {php}           }        {/php}
+		
+	   {php}       if($n){      {/php}
+		<div class="link btn-group"> <a href="{php}echo url('index/news1',array('id'=>$n['article_id']));{/php}" class="btn btn-default">NEXT<span class="glyphicon glyphicon-arrow-right"></span></a> </div>
+		{php}        }else{      {/php}
+		<div class="link btn-group"> <a href="###" class="btn btn-default">NEXT<span class="glyphicon glyphicon-arrow-right"></span></a> </div>
+        {php}           }        {/php}
+	</div>
+</section>
+<section class="artshow content">
+    <div class="box">
+	{foreach $result6 as $v}
+        <h1>{$v.article_title}</h1>
+        <span class="rel"> 大连网站建设<u>&bull;</u>{$v['createtime']|date="Y-m-d H:i:s",###}<u>&bull;</u><a href="#">行业动态</a><u>&bull;</u><span class="glyphicon glyphicon-eye-open" title="浏览次数"></span><script src="../../../../../plus/count.php~view=yes&aid=25&mid=1" type='text/javascript' language="javascript"></script>
+    </span>
+	{/foreach}
+        <div class="words">
+            <p><strong>精良的网站界面制</strong></p><p><a href="{php}echo url('index/index',[]);{/php}" target="_blank"><strong>大连网站建设</strong></a>{php}echo $article_body['article_body'];{/php}</p><script src="/inc/AspCms_VisitsAdd.asp?id=328"></script>
+        </div>
+        <dl class="tags">
+            <dt><span class="glyphicon glyphicon-tag"></span></dt>
+            <dd></dd>
+        </dl>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        </div>
+    </div>
+    <aside>
+        <div class="ad"><a href="tencent://message/?Menu=yes&uin=47249271&Site=吕经理&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45
+" title="做网站，找领超" target="_blank"><img src="__PUBLIC__/static/new/images/news/ad.jpg" alt="做网站，就找大连领超科技" /></a></div>
+        <div class="caption">
+            <h3>推荐阅读</h3>
+        </div>
+        <ul class="items">
+{foreach $result5 as $v}
+            <li>
+                <a href="{php}echo url('Index/news1', array('id'=>$v['article_id']));{/php}" target="_blank" class="thumb"><img src="__PUBLIC__/static/Upload/header/20150403/{$v.thumb}" /></a>
+                <span class="title"><a href="#" target="_blank" title="大连网站建设如何让你的网站更高端">{$v['article_title']}</a></span>
+                <span class="rel">1天前<span class="glyphicon glyphicon-eye-open" title="浏览次数"></span>0</span>
+            </li>
+
+{/foreach}
+        </ul>
+    </aside>
+
+</section>
+<div class="dock">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+        <li class="tel"> <i></i>
+            <p>建站咨询热线<br />
+                400-0411-891</p>
+        </li>
+        <li class="im"><i></i>
+            <p><a href="tencent://message/?Menu=yes&uin=47249271&Site=呼吸&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45" target="_blank">点我，建站咨询</a></p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

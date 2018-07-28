@@ -1,0 +1,105 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">
+            新闻分类列表
+            <a class="label label-primary" href="{php}echo url('news/addcategory', ['id'=>$catid]);{/php}">增加分类</a>
+        <a class="label label-primary" href="javascript:;" onclick="datadel()"><font color="red">批量删除</font></a>
+        </h3>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+			    <th><input type="checkbox" id="check" />&nbsp;全选</th>
+                <th>分类id</th>
+                <th>分类名称</th>
+                <th>所属分类</th>
+				<th>类型（多内容或单页）</th>
+				<th>缩略图</th>
+				<th>信息状态</th>
+				<th>录入时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+			<form name="form1" role="form1" id="form1" method="post" action="{php}echo url('news/delcategory'){/php}" enctype="multipart/form-data" >
+			{foreach $result as $v}
+                <tr align=center>
+                    <td><input type="checkbox" id="check" name="items[]" value="{$v.catid}"></td>
+					<td>{$v.catid}</td>
+                    <td>{$v.cat_name}</td>
+                    <td>{php}echo $catData['cat_name'] ? $catData['cat_name'] : '根分类';{/php}</td>
+					<td>{php}if($v['type'] == '1'){echo '多内容';}elseif($v['type'] == '0'){echo '单页';}{/php}</th>
+					
+                     <!--没有图片显示默认图片-->
+                        <td>{php}if ($v['thumb'] == '') : {/php}
+                        <img src="__PUBLIC__/static/Upload/header/20150403/timg.jpg"  height="100px" width="200px">
+                        {php};{/php}
+                        {php}else:{/php}
+                        <img src="__PUBLIC__/static/Upload/header/20150403/{$v['thumb']}" height="100px"/>
+                        {php}endif; {/php}</td>
+						
+                    <td>{php}if($v['status'] == '1'){echo '正常';}elseif($v['status'] == '0'){echo '异常';}{/php}</td>
+					<td>{$time|date="Y-m-d H:i:s",###}</td>
+					<td><a href="{php}echo url('news/editcategory', array("id"=>$v['catid']),'html');{/php}">修改</a>&nbsp;&nbsp;
+					    <a href="{php}echo url('news/del', array("id"=>$v['catid']),"html");{/php}">删除</a>&nbsp;&nbsp;
+						<a href="{php}echo url('news/category', array("id"=>$v['catid']),"html");{/php}">查看子分类</a>
+					</td>
+                </tr>
+	       {/foreach}
+		   </form>
+            </tbody>
+            <tfoot>
+                <!--<tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>-->
+            </tfoot>
+        </table>
+    </div><!-- /.box-body -->
+</div>
+<!--分页-->
+<div><tr>{$result->render(1)}</tr></div>
+<script type="text/javascript">
+document.getElementById('check').onclick=function()  
+        {  
+         // 获取所有的复选框  
+            var checkElements=document.getElementsByName('items[]');  
+            if (this.checked) {  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked="checked";  
+                }  
+  
+            }  
+            else{  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked=null;  
+                }  
+            } 
+        }  
+function datadel(id) {
+            //批量删除事件
+            if (confirm('确认要删除吗？')) {
+
+                var checkElements=document.getElementsByName('items[]');  
+                var g = false;
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    if(checkElement.checked){
+                        g = true;
+                    }
+                }  
+             if(g){
+                 document.form1.submit();
+                }else {
+                 alert("请选择要删除的列表！");
+              }
+              }
+              }
+
+ </script>

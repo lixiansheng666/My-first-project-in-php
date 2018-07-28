@@ -1,0 +1,168 @@
+<script src="__PUBLIC__/static/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+
+    <div class="box-header">
+        <h3 class="box-title">修改用户</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('indexuser/edituser', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+     <table class="table table-bordered table-striped">
+            <div class="form-group">
+                <!--<label for="userid">获取修改行id</label>-->
+                <input type="hidden" name="userid" id="userid" value="{php}echo $result['userid'];{/php}">
+            </div>	
+          <tr class="form-group">
+            <td width="200px"><label for="username">用户登录名</label></td>
+            <td><input type="text" name="username" id="username" style="width:60%;" value="{php}echo $result['username'];{/php}"></td>
+          </tr>
+          <tr class="form-group">
+            <td width="200px"><label for="realname">真实姓名</label></td>
+            <td><input type="text" name="realname" id="realname" style="width:60%;" value="{php}echo $result['realname'];{/php}"></td>
+          </tr>
+		    <tr class="form-group">
+                <td><label for="sex">性别</label></td>
+                <td><select name="sex" id="sex">
+                <option value ="1" selected>男</option>
+                <option value ="0">女</option>
+                </select></td>
+            </tr>
+			<script>
+			document.getElementById('sex').value="{php}echo $result['sex'];{/php}";
+			</script>
+		  <tr class="form-group">
+            <td><label for="password">密码</label></td>
+            <td><input type="password" name="password" id="password" style="width:60%;" value=""></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="salt">随机号</label></td>
+            <td><input type="text" name="salt" id="salt" style="width:60%;" value="{php}echo $result['salt'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="work_number">工号</label></td>
+            <td><input type="text" name="work_number" id="work_number" style="width:60%;" value="{php}echo $result['work_name'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="national">民族</label></td>
+            <td><input type="text" name="national" id="national" style="width:60%;" value="{php}echo $result['national'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="card_id">身份证号</label></td>
+            <td><input type="text" name="card_id" id="card_id" style="width:60%;" value="{php}echo $result['card_id'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="jiguan">籍贯</label></td>
+            <td><input type="text" name="jiguan" id="jiguan" style="width:60%;" value="{php}echo $result['jiguan'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="xueli">学历</label></td>
+            <td><input type="text" name="xueli" id="xueli" style="width:60%;" value="{php}echo $result['xueli'];{/php}"></td>
+          </tr>
+		   <tr class="form-group">
+                <td><label for="marriage">婚否</label></td>
+                <td><select name="marriage" id="marriage">
+                <option value ="1" selected>已婚</option>
+                <option value ="2">未婚</option>
+				<option value ="0">保密</option>
+                </select>
+				</td>
+           </tr>
+		   	<script>
+			document.getElementById('marriage').value="{php}echo $result['marriage'];{/php}";
+			</script>
+		  <tr class="form-group">
+            <td><label for="professional">专业</label></td>
+            <td><input type="text" name="professional" id="professional" style="width:60%;" value="{php}echo $result['professional'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="graduated">毕业学校</label></td>
+            <td><input type="text" name="graduated" id="graduated" style="width:60%;" value="{php}echo $result['graduated'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="begin_work_time">参加工作时间</label></td>
+            <td><input type="text" name="begin_work_time" id="begin_work_time" style="width:60%;" value="{php}echo $result['begin_work_time'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="join_work_time">加入本单位时间</label></td>
+            <td><input type="text" name="join_work_time" id="join_work_time" style="width:60%;" value="{php}echo $result['join_work_time'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="department_id">部门id</label></td>
+            <td><input type="text" name="department_id" id="department_id" style="width:60%;" value="{php}echo $result['department_id'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="work_id">岗位id</label></td>
+            <td><input type="text" name="work_id" id="work_id" style="width:60%;" value="{php}echo $result['work_id'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="work_name">岗位名称</label></td>
+            <td><input type="text" name="work_name" id="work_name" style="width:60%;" value="{php}echo $result['work_name'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="political">政治面貌</label></td>
+            <td><input type="text" name="political" id="political" style="width:60%;" value="{php}echo $result['political'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="zhicheng">职称</label></td>
+            <td><input type="text" name="zhicheng" id="zhicheng" style="width:60%;" value="{php}echo $result['zhicheng'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="home_address">家庭住址</label></td>
+            <td><input type="text" name="home_address" id="home_address" style="width:60%;" value="{php}echo $result['home_address'];{/php}"></td>
+          </tr>
+		 <tr class="form-group">
+            <td><label for="home_mobile">家庭电话</label></td>
+            <td><input type="text" name="home_mobile" id="home_mobile" style="width:60%;" value="{php}echo $result['home_mobile'];{/php}"></td>
+          </tr>
+		 <tr class="form-group">
+            <td><label for="email"></label>电子邮箱</td>
+            <td><input type="text" name="email" id="email" style="width:60%;" value="{php}echo $result['email'];{/php}"></td>
+          </tr>
+		   <tr class="form-group">
+                <td><label for="photo">头像</label></td>
+                <td><input type="file" id="photo" name="photo"><img src="__PUBLIC__/static/Upload/header/20150403/{php}echo $result['photo'];{/php}" width="50px"></td>
+                <!--<p class="help-block">图片上传</p>-->
+          </tr>
+		   <tr class="form-group">
+            <td><label for="login_num">登录次数</label></td>
+            <td><input type="text" name="login_num" id="login_num" style="width:60%;" value="{php}echo $result['login_num'];{/php}"></td>
+          </tr>
+            <tr class="form-group">
+                <td><label for="status">状态</label></td>
+                <td><select name="status" id="status">
+                <option value ="1" selected>正常</option>
+                <option value ="0">异常</option>
+                </select></td>
+            </tr>
+			<script>
+			document.getElementById('status').value="{php}echo $result['status'];{/php}";
+			</script>
+		   <tr class="form-group">
+            <td><label for="createtime">创建时间</label></td>
+            <td><input type="text" name="createtime" id="createtime" style="width:60%;" value="{$t|date="Y-m-d H:i:s",###}" disabled></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="logintime">最后一次登录时间</label></td>
+            <td><input type="text" name="logintime" id="logintime" style="width:60%;" value="{$t|date="Y-m-d H:i:s",###}" disabled></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="loginip">最近登陆的IP地址</label></td>
+            <td><input type="text" name="loginip" id="loginip" style="width:60%;" value="{php}echo $result['loginip'];{/php}" disabled></td>
+          </tr>
+           <tr class="form-group">
+                <td>信息修改人员({$Think.session.username})的id</td>
+                <td><input type="text" name="updater" style="width:60%;" value='{$Think.session.uid}' disabled></td>     
+            </tr>
+		  </table>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="box-footer">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" class="btn btn-success radius" value="重置" style="background-color:red"/>
+        </div>
+          </form>
+        </div>
+		<!-- /.box-body -->
+</div>
+</div>
+

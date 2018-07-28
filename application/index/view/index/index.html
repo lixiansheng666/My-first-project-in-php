@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <title>大连网站建设_大连做网站_大连网站设计-领超科技大连网络营销专家</title>
+    <meta name="keywords" content="大连做网站公司,大连网站建设,大连网站推广,大连网站优化,大连网页设计,大连做网站,大连做网页,大连网站设计" />
+    <meta name="description" content="大连做网站首选领超科技,多年大连网站建设(大连网站设计制作)、大连网站推广(大连网站优化营销)经验.精英技术团队,高品质服务,电话:4000411891 " />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="__PUBLIC__/static/new/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/new/style/index.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="templets/Scripts/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="__PUBLIC__/static/new/js/jquery.min.js"></script>
+    <!--<script>-->
+        <!--var www_path = "__PUBLIC__";-->
+    <!--</script>-->
+    <script src="__PUBLIC__/static/new/js/index.min.js"></script>
+</head>
+<!--[if lt IE 9]>
+<a href="tips.html" id="clickMe"></a>
+<![endif]-->
+<script type="text/javascript">
+    // 两秒后模拟点击
+    setTimeout(function() {
+        // IE
+        if(document.all) {
+            document.getElementById("clickMe").click();
+        }
+        // 其它浏览器
+        else {
+            var e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);
+            document.getElementById("clickMe").dispatchEvent(e);
+        }
+    }, 0);
+</script>
+<body>
+<header>
+    <div class="logo">
+        <a href="http://www.dllingchao.com/"><img src="__PUBLIC__/static/new/images/logo.png" alt="大连网站建设" class="img-responsive" /> </a></div>
+    <strong class="words">高端网络互动营销</strong>
+    <nav class="menu">
+        <ul class="list-inline">
+            <li class="active"><a>首页</a></li>
+			 {php}if(session('?uuid')):{/php}
+			<li>({$Think.session.indexusername})<a href="{php}echo url('index/out');{/php}">退出</a></li>
+			 {php}else:{/php}  
+            <li><a href="{php}echo url('index/login');{/php}">登录</a></li>
+            <li><a href="{php}echo url('index/register');{/php}">注册</a></li>	
+             {php}endif;{/php}			
+			<li><a href="{php}echo url('index/shop/index');{/php}">商城</a></li>
+            <li><a>业务</a></li>
+            <li><a>案例</a></li>
+            <li><a>客户</a></li>
+            <li><a>品质</a></li>
+            <li><a>增值</a></li>
+            <li><a>关于</a></li>
+            <li><a>联系</a></li>
+			<li><a href="{php}echo url('index/message');{/php}">留言</a></li>
+        </ul>
+    </nav>
+    <div class="hotline"> <a href="tel:4000411891" title="大连网站建设咨询热线"><span>400-0411-891</span></a><u></u> </div>
+    <div class="menu-icon"> <a href="tel:4000411891" title="点击直拨网站建设热线"><span class="glyphicon glyphicon-earphone"></span></a> <span class="glyphicon glyphicon-th-large"></span> </div>
+</header>
+<div class="welcome">
+    <p><u>Loading . . .</u></p>
+</div>
+<section class="video">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide nth1">
+                <div class="box">
+                    <div class="left"></div>
+                    <div class="right"> <span>年专注，网站建设</span><i></i>
+                        <p>始于 2009 - 2016 展望未来<br />
+                            专注于设计体验，专业于解决方案</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide nth2">
+                <div class="box"> <span>设计控，也醉了</span><i></i>
+                    <p>不是非要高大上，只是醉心于设计<br />
+                        我们想，再上一个好案例</p>
+                </div>
+            </div>
+            <div class="swiper-slide nth3">
+                <div class="box">
+                    <div class="top">技术派，论研发</div>
+                    <div class="mid"></div>
+                    <div class="bottom">我说，业界没有最好的技术，只有最棒的技术开发者<br />
+                        定制研发，为您的客户和团队</div>
+                </div>
+            </div>
+            <div class="swiper-slide nth4">
+                <div class="box">
+                    <div class="top"><span>先入为主，布局未来</span><i></i></div>
+                    <div class="bottom">全面布局<u>PC</u>端与<u>移动</u>端<br />
+                        抢占头等商机<br />
+                        基于<u>Html5</u>响应式布局，智能识别多种终端设备</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="innerBox">
+        <div class="news"> <span>NEWS :</span>
+
+            <a href="{php}echo url('index/newslist', array('id'=>0));{/php}" title="更多文章动态" class="more" target="_blank">more</a>
+
+            <ul>
+
+                <li><a href="{php}echo url('index/news1', []);{/php}" target="_blank" title="大连网站建设如何让你的网站更高端">大连网站建设如何让你的网站更高端</a></li>
+
+                <li><a href="/news/327.html" target="_blank" title="大连网站建设首页设计效果如何兼顾搜索引擎">大连网站建设首页设计效果如何兼顾搜索引擎</a></li>
+
+                <li><a href="/news/326.html" target="_blank" title="大连网站建设中怎样设计出优质图片">大连网站建设中怎样设计出优质图片</a></li>
+
+                <li><a href="/news/325.html" target="_blank" title="大连企业网站设计怎么提升特色网站设计">大连企业网站设计怎么提升特色网站设计</a></li>
+
+                <li><a href="/news/324.html" target="_blank" title="大连网站设计的基本规则要遵循">大连网站设计的基本规则要遵循</a></li>
+
+            </ul>
+        </div>
+        <div class="guide"></div>
+        <a class="movedown"></a> </div>
+</section>
+<section class="business">
+    <div class="box">
+        <div class="caption"> <i></i><span>我们在做什么</span> <br class="clear" />
+        </div>
+        <ul class="items list-inline">
+            <li class="pc"> <i></i><strong>宣传展示型网站</strong>
+                <p>高端宣传展示型网站<br />
+                    提升企业整体形象</p>
+            </li>
+            <li class="mobi"> <i></i><strong>电子商务型网站</strong>
+                <p>电子商务网站建设服务<br />
+                    实现并超越您的商务预期目标</p>
+            </li>
+            <li class="sys"> <i></i><strong>集团企业型网站</strong>
+                <p>真正满足浏览者需要的实用型网站<br />
+                    达成不同部门分别维护网络平台</p>
+            </li>
+            <li class="app"> <i></i><strong>行业门户型网站</strong>
+                <p>提供行业门户网站实施服务<br />
+                    更具针对性、更专业</p>
+            </li>
+            <li class="host"> <i></i><strong>互动推广型网站</strong>
+                <p>平台层、运营层、服务层相结合<br />
+                    线上与线下活动的完美结合</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="cases">
+    <div class="box">
+        <div class="caption"> <i></i><span>案例欣赏</span> <br class="clear" />
+        </div>
+        <div class="swiper-container items">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide"> <a href="{php}echo url('index/case1', array('id'=>$one['case_id']));{/php}" target="_blank"> <img src="__PUBLIC__/static/new/images/201509091403057298.png" alt="大连海事大学企业......" />
+                    <p>网站设计<br />
+                        <strong>大连海事大学企业......</strong><br />
+                    </p>
+                </a> </div>
+
+                <div class="swiper-slide"> <a href="{php}echo url('index/case2', []);{/php}" target="_blank"> <img src="__PUBLIC__/static/new/images/201509091346552470.png" alt="大连摆渡人留美咨询" />
+                    <p>网站设计<br />
+                        <strong>大连摆渡人留美咨询</strong><br />
+                    </p>
+                </a> </div>
+
+                <div class="swiper-slide"> <a href="{php}echo url('index/case3', []);{/php}" target="_blank"> <img src="__PUBLIC__/static/new/images/201509091337296208.png" alt="大连少儿美术学校" />
+                    <p>网站设计<br />
+                        <strong>大连少儿美术学校</strong><br />
+                    </p>
+                </a> </div>
+
+            </div>
+        </div>
+        <a href="{php}echo url('index/caseslist', array('id'=>0));{/php}" title="欣赏更多网站建设案例" class="more" target="_blank">MORE</a> </div>
+</section>
+<section class="clients">
+    <div class="box">
+        <div class="caption"> <i></i><span>他们与领超长期合作</span> <br class="clear" />
+        </div>
+        <ul class="items list-inline">
+            <li class="cctv"><span>红星美凯龙</span></li>
+            <li class="unicom"><span>丰收假期</span></li>
+            <li class="tsinghua"><span>辽宁成大</span></li>
+            <li class="cas"><span>中国科学院</span></li>
+            <li class="sipo"><span>楷模木门</span></li>
+            <li class="apple"><span>澜迪</span></li>
+            <li class="das"><span>木子视界商业摄影</span></li>
+            <li class="hunantv"><span>大连市珠宝玉石协会</span></li>
+            <li class="sino"><span>约伴网</span></li>
+            <li class="report"><span>锐利设计</span></li>
+            <li class="gedu"><span>启慧中医</span></li>
+            <li class="bgg"><span>#</span></li>
+            <li class="bsec"><span>#</span></li>
+            <li class="huadan"><span>#</span></li>
+            <li class="zd"><span>#</span></li>
+        </ul>
+    </div>
+</section>
+<section class="quality">
+    <div class="box">
+        <div class="caption"> <i></i><span>不同媒介，同样精彩</span> <br class="clear" />
+        </div>
+        <div class="swiper-container items">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide nth1">
+                    <ul class="list-inline">
+                        <li class="mobi"><span>响应式手机网站建设</span></li>
+                        <li class="pad"><span>响应式平板网站建设</span></li>
+                        <li class="pc"><span>响应式PC网站建设</span></li>
+                    </ul>
+                    <p>触及视觉灵魂的设计趋势<br />
+                        精心布局的用户体验<br />
+                        毫无顾忌地通过任何终端<br />
+                        呈现在客户的眼前</p>
+                </div>
+                <div class="swiper-slide nth2">
+                    <ul class="list-inline">
+                        <li class="ie"><span>兼容微软IE浏览器的网页设计</span></li>
+                        <li class="chrome"><span>兼容谷歌Chrome浏览器的网站设计</span></li>
+                        <li class="firefox"><span>兼容火狐Firefox浏览器的网页设计</span></li>
+                        <li class="safari"><span>兼容苹果Safari浏览器的网站设计</span></li>
+                    </ul>
+                    <p>Html5 + CSS3 响应式布局<br />
+                        卓越的浏览器兼容性<br />
+                        因为高端，所以出众</p>
+                </div>
+                <div class="swiper-slide nth3">
+                    <ul class="list-inline">
+                        <li class="windows"><span>跨windows平台网站制作</span></li>
+                        <li class="ios"><span>跨ios平台网站制作</span></li>
+                        <li class="andriod"><span>跨andriod平台网站制作</span></li>
+                    </ul>
+                    <p>基于 B/S 架构的网站建设<br />
+                        无障碍的跨平台应用<br />
+                        无须用户下载安装即可使用<br />
+                        云端管理，轻松维护</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="marketing">
+    <div class="box">
+        <div class="caption"> <i></i><span>整合营销，抢占商机</span> <br class="clear" />
+        </div>
+        <ul class="items list-inline">
+            <li class="se"> <i></i><strong>搜索引擎</strong>
+                <p>SEO 优化<br />
+                    搜索引擎竞价</p>
+            </li>
+            <li class="weixin"> <i></i><strong>微信营销</strong>
+                <p>公众账号 / 微网站<br />
+                    微盟 ( 微社区 )</p>
+            </li>
+            <li class="weibo"> <i></i><strong>微博营销</strong>
+                <p>企业蓝V认证<br />
+                    官方微博接入网站</p>
+            </li>
+            <li class="sms"> <i></i><strong>消息推送</strong>
+                <p>短信平台接口<br />
+                    Email 推送</p>
+            </li>
+            <li class="pay"> <i></i><strong>在线支付</strong>
+                <p>支付宝、银联<br />
+                    Paypal 接口</p>
+            </li>
+            <li class="bbs"> <i></i><strong>论坛聚人</strong>
+                <p>独立开发<br />
+                    会员打通</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="aboutus">
+    <ul class="menu">
+        <li>公司简介</li>
+        <li>技术优势</li>
+        <li>走进我们</li>
+    </ul>
+    <div class="swiper-container items">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide nth1"> <strong>以技术团队为主导<br />与设计师一对一沟通</strong>
+                <p>大连专业的品牌网站服务解决方案提供商和网络营销服务专家<br />
+                    以用户为中心，简洁易用<br />
+                    相信领超，相信你的选择，我们期待着与您的合作！</p>
+            </div>
+            <div class="swiper-slide nth2"> <strong>大连领超技术优势</strong>
+                <p>ASP网站开发设计</p><p>PHP网站开发设计</p><p>HTML5互动网站开发设计</p><p>.NET网站开发设计</p>
+                <p>我们始终坚持以客户需求为导向，为追求用户体验设计，提供有针对性的项目解决方案，织梦人将不断地超越自我，挑战险峰！</p>
+            </div>
+            <div class="swiper-slide nth3"> <strong>走进领超</strong>
+                <ul>
+                    <li>大连领超互动设计成立于2009年9月，专精于高品质网站建设的全方位网站设计策划公司，同时也拥有实力坚强的研发团队及顶尖素养的设计专才，大连领超互动设计一直致力于建立更多，更优秀的互联网品牌形象，提供权威专业的互联网品牌策划，并实施高标准的设计方案，创造真正意义上的品牌网站，为互联网品牌在互动行销领域创造最大价值而不懈努力！领超互动设计（中国）-品牌网站建设顾问。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <table class="exp">
+        <tr>
+            <td><u>611</u>位企业客户信赖之选</td>
+            <td><u>267</u>上市/集团企业设计作品</td>
+            <td><u>96%</u>以上的客户续费率</td>
+        </tr>
+    </table>
+</section>
+<section class="contact">
+    <div class="box">
+        <div class="above">
+            <div class="wechat"><img src="__PUBLIC__/static/new/images/wechat_code.jpg" alt="扫描关注大连做网站公众账号" /></div>
+            <div class="left"> <a href="" title="网站制作咨询热线" class="tel"></a>
+                <p>辽宁<u>·</u>大连<u></u>沙河口区<br />
+                    联系电话：4000411891<u>/</u>0411-84506171<br />
+                    地址：大连市沙河口区星海广场903室<br />
+                    邮编：116000
+                </p>
+            </div>
+            <div class="right"> Email：654111150@qq.com<br />
+
+                Copyright 2009-2016<u></u>领超科技 版权所有<br />
+                辽ICP备11015405号<br />
+            </div>
+        </div>
+        大连领超科技专注<a href="http://www.dllingchao.com/"target="_blank">大连网站制作</a>、<a href="http://www.dllingchao.com/"target="_blank">大连网站设计</a>是您身边的<a href="http://www.dllingchao.com/"target="_blank">大连网站建设</a>专家！
+        <div>友情链接：<a href="http://www.dlhtml.com" target="_blank">大连网站设计</a>&nbsp;  </div>
+
+
+    </div>
+</section>
+<div class="dock">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+        <li class="im"> <i></i>
+            <p>网站建设咨询<br />
+                在线沟通，请点我<a href="tencent://message/?Menu=yes&uin=47249271&Site=呼吸&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45" target="_blank">在线咨询</a></p>
+        </li>
+        <li class="tel"> <i></i>
+            <p>建站咨询热线：<br />
+                400-0411-891<br />
+        </li>
+        <li class="wechat"> <i></i>
+            <p><img src="__PUBLIC__/static/new/images/wechat_code.jpg" alt="扫描关注网站建设微信公众账号" /></p>
+        </li>
+        <li class="down"><i></i></li>
+    </ul>
+    <a class="switch"></a> </div>
+<script type="text/javascript">
+    $(".contact .box").append('<div class="below"><i> <img src="__PUBLIC__/static/new/images/word-beyond.png" alt="大连做网站公司" title="大连网站建设公司" /></i></div>');
+    $(".contact .box .wechat img").addClass("img-responsive");
+</script>
+</body>
+</html>

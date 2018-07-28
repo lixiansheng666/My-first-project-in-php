@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>大连网站建设_大连做网站_大连网站设计-领超科技大连网络营销专家</title>
+    <meta name="keywords" content="大连做网站公司,大连网站建设,大连网站推广,大连网站优化,大连网页设计,大连做网站,大连做网页,大连网站设计" />
+    <meta name="description" content="大连做网站首选领超科技,多年大连网站建设(大连网站设计制作)、大连网站推广(大连网站优化营销)经验.精英技术团队,高品质服务,电话:4000411891" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="__PUBLIC__/static/new/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/new/style/inner.min.css" rel="stylesheet" />
+    <script src="__PUBLIC__/static/new/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/inner.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="box">
+        <a href="http://www.dllingchao.com/" title="大连网站建设公司"><img src="__PUBLIC__/static/new/images/cases/logo_cases.png" alt="大连做网站" /></a>
+        <div class="wechat">
+            <img src="__PUBLIC__/static/new/images/cases/wechat_code.jpg" alt="扫描关注大连领超微信公众账号" class="wechat" /><p>扫一扫微信二维码<i></i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{php}echo url('index/index', []);{/php}">领超首页</a></li>
+                <li><a href="{php}echo url('index/caseslist', []);{/php}">设计案例</a></li>
+                <li class='active'><a href="{php}echo url('index/newslist', []);{/php}" style='color:white;'>文章动态</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        高端定制，品牌设计<br /><u>2009 - 2016</u>作品集<br /><a href="http://www.dllingchao.com/" target="_blank">大连领超科技发展有限公司</a>
+    </footer>
+	
+</header>
+
+<section class="toolbar"> <a href="http://www.dllingchao.com/" title="返回首页" class="homelink"><span class="glyphicon glyphicon-chevron-left"></span></a> <span class="switch glyphicon glyphicon-th-list"></span>
+    <div class="category btn-group">
+	<a href="{php}echo url('newslist',array('id'=>0));{/php}" class="btn btn-default btn-primary">全部</a>
+	  {foreach $result as $v}
+        <a href="{php}echo url('Index/newslist',array('id'=>$v['catid']));{/php}" class="btn btn-default">{$v.cat_name}</a>
+	  {/foreach}
+    </div>
+</section>
+
+<section class="artlist content">
+{foreach $result5 as $v}
+    <ul class="items">
+        <li>
+            <p class="left"><span class="date">{$v['createtime']|date="m-d ",###}</span> <a href="{php}echo url('Index/news1', array('id'=>$v['article_id']));{/php}" target="_blank" class="thumb">
+			<img src="__PUBLIC__/static/Upload/header/20150403/{$v.thumb}" alt="大连网站建设如何让你的网站更高端" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="{php}echo url('index/news1',  array('id'=>$v['article_id']));{/php}" target="_blank">{$v['article_title']}</a></span>
+                <span class="rel">1天前<u>&bull;</u>围观热度 {$v['click']}<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">{$v['article_matter']}</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="{php}echo url('index/news1', []);{/php}">1111111</a>&nbsp; </span>
+            </p>
+        </li>
+{/foreach}
+<div><tr>{$result5->render(1)}</tr></div>
+        <!--<li>
+            <p class="left"><span class="date"></span> <a href="/news/327.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设首页设计效果如何兼顾搜索引擎" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/327.html" target="_blank">大连网站建设首页设计效果如何兼顾搜索引擎</a></span>
+                <span class="rel">2天前<u>&bull;</u>围观热度 2<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">现在百度和谷歌还有其他搜索引擎都在说网站用户体验，而这就需要我们在做网站过程中坚持的原则就变成网站不仅要注重用户体验，还要注重兼顾搜索引擎。那么，大连网站建设在做网站首页中，如何兼顾到用户体验和搜索引擎。追求网站基本元素，达到网站用户体验最佳 &nbsp; &nbsp; &nbsp;网站首页基本元素和布局千万不可抛弃，在网站打开页面给用户一个良好的视觉效果。然而，这种效果就需要保证用户在浏览网站过</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/327.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-27</span> <a href="/news/326.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设中怎样设计出优质图片" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/326.html" target="_blank">大连网站建设中怎样设计出优质图片</a></span>
+                <span class="rel">3天前<u>&bull;</u>围观热度 1<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">众所周知，图片在网站设计中的作用是非常重要的，优质的图片可以帮助网站吸引用户的关注。大连网站建设专家想说的是，网站在设计网页的时候，设计图片和背景，一方面是为了看起来更加美观，一方面是为了向用户传达一种视觉体验。图片吸引用户眼球的瞬间冲击力是很重要的。如今一些主流网站对于图片的视觉效果都有更高层次的需求。那么，在网站建设的过程中，我们该怎样选择图片，设计出符合需求的图片呢？1. 图片选择符合网站整</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/326.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-26</span> <a href="/news/325.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连企业网站设计怎么提升特色网站设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/325.html" target="_blank">大连企业网站设计怎么提升特色网站设计</a></span>
+                <span class="rel">4天前<u>&bull;</u>围观热度 2<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">企业网站建设现在已经逐渐变成抄袭，这就很容易给客户造成审美疲劳。虽然现在很多网站都采用扁平化设计方式，然而在内容设计和界面设计还是比较呆板。我们设计网站应该采用美学和结合网站自身特点设计，这样做出来的网站比较适合企业本身。强烈企业文化和浓厚时代文化企业宣传方式主要就是宣传企业排名和企业文化。因此，我们在网站设计中就需要进行动态和静态效果的企业宣传，无论是falsh动画，还是图片效果图，都要体现这点</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/325.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-25</span> <a href="/news/324.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站设计的基本规则要遵循" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/324.html" target="_blank">大连网站设计的基本规则要遵循</a></span>
+                <span class="rel">5天前<u>&bull;</u>围观热度 1<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">1、展示出自己的风格每个人看到页面是否精美的标准不一样，有些偏于美工精美，有些偏于功能强大，有些追求个性，有些则喜欢跟随潮流，但其实不管乍样，网站都有一个共同的功能，不是只做给个人看的，更多的是为了在别人面前展示自己的商品、知识或者说是一种思想，反正什么都好，所以个人认为做一个网站，最基本的是要实用、简洁、整体性好，能真正的形成一个属于自身网站的风格，保持一个整体的形象，配色均匀。这些应该是设计一</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/324.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-24</span> <a href="/news/323.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设之页面重构设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/323.html" target="_blank">大连网站建设之页面重构设计</a></span>
+                <span class="rel">6天前<u>&bull;</u>围观热度 1<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">因为现在很多网络上的网站都很类似，所以有些用户在大连网站建设的时候会要求制作一些与众不同的风格网站。今天领超科技要和大家分享的就是页面重构设计。点、线、面及组成对于页面排版的意义非常重视。因为页面的构成少不了点、线和面这三大基本要素。例如，先做一个渐变背景，会沿着渐变的方向切出一个像素宽度的直线作为背景图片，而这个线就是由基础的点构成的。当然，点是相对而言的，点也有很多种，有按一定规律的排列方式也</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/323.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-20</span> <a href="/news/322.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设如何选择服务器？" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/322.html" target="_blank">大连网站建设如何选择服务器？</a></span>
+                <span class="rel">7天前<u>&bull;</u>围观热度 2<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">首先，我们所有的网站都是放置在服务器上面的。从广义上讲，服务器是指网络中能对其它机器提供某些服务的计算机系统（服务器）。从狭义上讲，服务器是专指某些高性能计算机，能通过网络，对外提供服务。相对于普通PC来说，稳定性、安全性、性能等方面都要求更高，因此在CPU、芯片组、内存、磁盘系统、网络等硬件和普通PC有所不同。我们网站一般就是放置在狭义层面定义的服务器上的。其次，网站放置在服务器上的形式是有很多</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/322.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-19</span> <a href="/news/321.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设中的内容和功能的设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/321.html" target="_blank">大连网站建设中的内容和功能的设计</a></span>
+                <span class="rel">8天前<u>&bull;</u>围观热度 5<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">一个网站的建设主要是由内容以及功能组成的。这两个部分是大连网站建设的重要部分，既然这么重要，那么到底要怎样设计呢？今天就跟大家分享一下网站的内容以及功能建设的流程。第一、网站建设之内容和功能的建设清单。其实就是要做好两份清单，第一个是网站内容的清单，第二个是网站功能建设的清单。网站的内容主要包括内容页面有哪些。功能清单主要是网站建设中相对应的功能有哪些。网站的内容包括静态的和动态的。而静态的网站内</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/321.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-18</span> <a href="/news/320.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设分享网站域名常识" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/320.html" target="_blank">大连网站建设分享网站域名常识</a></span>
+                <span class="rel">9天前<u>&bull;</u>围观热度 8<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">我们都知道，一个网站是由域名、空间及程序组成。那么行外人对于这些名词，又了解多少呢？要对大连网站建设有更多的了解，下面就给大家脑补一下网站域名的常识。　　域名是互联网上的一个服务器的名字，可以将其视为门牌号，在互联网的世界是没有重复的域名。因此，每个域名都是独一无二的。　　域名的可以分为顶级域名、二级域名、子域名等等。顶级域名里又有几种类型构成，包括商业性的机构公司、政府部门、军事部门、非盈利的组</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/320.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-17</span> <a href="/news/319.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设如何确保网站结构清晰" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/319.html" target="_blank">大连网站建设如何确保网站结构清晰</a></span>
+                <span class="rel">10天前<u>&bull;</u>围观热度 3<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">　网站的结构好比网站的生命，对网站而言十分重要。不同类型的网站，有不同的结构。但不管怎样，只有结构清晰，简单明了，才能更好地指引客户浏览相关的信息，给用户更好的体验。　　那么，在大连网站建设中，如何确保网站结构的清晰呢？　　第一，不能使用过多的Flash动画，Flash动画内容很难被搜索引擎抓取。也不要采用iframe框架，iframe框架跟Flash一样，是网站结构设计中的大忌。　　第二，页面跳</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/319.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-15</span> <a href="/news/318.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设给企业带来的效益" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/318.html" target="_blank">大连网站建设给企业带来的效益</a></span>
+                <span class="rel">11天前<u>&bull;</u>围观热度 5<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">随着企业网站建设的普遍化，企业的竞争已经从线下发展到线上。那么大连网站建设能给企业带来什么效益呢？　　一、树立企业形象　　企业网站代表企业在互联网的形象，如果企业网站建设得好就能够给用户留下好的印象，反之就会给用户留下不好的印象。现在越来越多用户都是通过网站来了解企业品牌、企业产品等信息，假如企业连网站都没有就很可能会错失很多机会。　　二、及时更新信息　　企业是不断发展的，企业网站可以随时随地扩充</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/318.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-14</span> <a href="/news/317.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设banner图如何设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/317.html" target="_blank">大连网站建设banner图如何设计</a></span>
+                <span class="rel">12天前<u>&bull;</u>围观热度 4<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">横幅广告(banner ads)是互联网营销中最常见的广告手段。从Geocities和MySapce时代开始，横幅广告就进入了互联网世界，如今从iPad到闪购活动，各种产品和服务都会出现在横幅广告上。最近，随着市场营销变得越来越智能，网站也能够根据用户的访问历史，来向用户推送更领他们感兴趣的广告。这意味着横幅广告的精准度越来越高。这样的广告，也给普通用户带来了方便。例如如果今天晚上某个电商将会组织</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/317.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-13</span> <a href="/news/316.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连微网站建设如何布局" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/316.html" target="_blank">大连微网站建设如何布局</a></span>
+                <span class="rel">13天前<u>&bull;</u>围观热度 5<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">想要优化好一个微网站，合理的网站布局是网站优化的一个基础。网站的结构合理清晰，用户在浏览网站的时候也会更加有兴趣，并且会深入访问网站。搜索引擎蜘蛛在抓取的时候也比较快。既然微网站的布局和结构对网站SEO优化影响这么大，那么微网站在布局的时候到底需要注意哪些事项呢？有应该怎样创建网站，又要遵守哪些原则呢？今天大连网站建设就来分析一下网站布局。第一、网站整体布局要做好规划。布局网站结构的时候，一定要对</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/316.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-12</span> <a href="/news/315.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设的创新原则和务实原则" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/315.html" target="_blank">大连网站建设的创新原则和务实原则</a></span>
+                <span class="rel">14天前<u>&bull;</u>围观热度 4<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">关于大连网站建设的原则有很多，例如设计原则等，设计的重要性体现在吸引用户上面，如果一个设计平庸的网站，是很快被用户所遗忘的，所以要网站被用户记住就需要遵循一些原则。1.创新原则。我们都深知互联网是一个竞争异常激烈的平台，所以创新能够让你展现出特有的东西，而这也恰恰是让用户记住你并和其他网站有所区分的重点，不抄袭是首要的，除此之外，少而精也十分重要。2.务实原则。网站不能仅有创新的元素，务实能够让用</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/315.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-11</span> <a href="/news/314.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站制作如何做到更好" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/314.html" target="_blank">大连网站制作如何做到更好</a></span>
+                <span class="rel">15天前<u>&bull;</u>围观热度 3<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">在我们进行公司网站制作的时候，都希望可以真正做的更好，这个时候到底是要如何来做才能够真正的保障整个网站可以实现更好的质量呢，这一点对公司今后的发展是有很大的影响的。现在领超科技就来说说企业如何来做才能够真正的实现这个方面的作用呢？我们在进行大连网站制作的时候想要真正做的更好，必须保证网站建设的质量，也就是说要找到有实力的公司，当你真正找到了这样的公司之后，你会发现最终的发展有很大的保障。如果我们无</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/314.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-10</span> <a href="/news/313.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设过程中标题设置的注意事项" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/313.html" target="_blank">大连网站建设过程中标题设置的注意事项</a></span>
+                <span class="rel">16天前<u>&bull;</u>围观热度 4<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">即使很多网站都已经意识到网站seo优化的重要性，但是他们对网站的优化却不了解，尤其是企业网站，在页面标题的设计上最突出，就连政府网站也是一样。互联网中的很多网站的标题几乎都是清一色的“XX网站”。这样的标题对网站的优化并没有帮助，网站关键字的排名也不会高。今天我们简单说一下大连网站建设过程中标题的设置的一些问题。　　第一、关键字要在标题的最前面，但是不要有堆砌的现象。在设置标题的时候，要确定好标题</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/313.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-08</span> <a href="/news/312.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设对企业的重要性" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/312.html" target="_blank">大连网站建设对企业的重要性</a></span>
+                <span class="rel">17天前<u>&bull;</u>围观热度 6<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">企业建设网站已经成为一种网络常态，网站对传统企业或者是新型企业，都起着举足轻重的作用，为此建设企业网站成为很多企业发展互联网业务的起点，那么大连网站建设对企业来说有什么意义呢？直到现在依然很多企业对建设网站的重要性不太了解，一些企业只要行业网站上建立一个页面来作为自己的公司网站。然而，这样的页面是不足以推广自己的产品与服务的。企业如果要发展越来越强大，拥有一个独立网站是必须的，通过对网站优化，提供</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/312.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-07</span> <a href="/news/311.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设要怎样留住用户" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/311.html" target="_blank">大连网站建设要怎样留住用户</a></span>
+                <span class="rel">18天前<u>&bull;</u>围观热度 4<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">大连网站建设最主要的即是能够留住用户，用户留在网站的时刻越长，转化率就会越高，而不是用户刚进入网站还没开端正式拜访就封闭网站。那么要如何留住用户呢？最有效的方法即是下降用户的跳出率，削减用户考虑的时刻。由于用户拜访一个网站是有意图的，当拜访一个网站的时分，期望能够最快地找到方针内容或许想要的服务。那么要如何让用户忘掉考虑呢？削减用户的考虑时刻，下降跳出率呢？第一、文章标题以及文章的内容坚持相关性。</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/311.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">04-06</span> <a href="/news/310.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站制作应遵循的几大原则" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/310.html" target="_blank">大连网站制作应遵循的几大原则</a></span>
+                <span class="rel">19天前<u>&bull;</u>围观热度 5<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">　当今社会中，很多企业都拥有自己的网站。但是如何才能制作一个体现自己企业文化，展示自己产品，已经是很多企业一直在探索的问题。因此，在大连网站制作之前，必须要明确为什么建设网站和用户需求是什么。下面从个人角度谈谈网站建设的应注意的几大原则。　　明确设计主题　　在明确设计主题上，就是完成网站的总体设计方案。这样就体现出网站的整体风格和特色的定位。网站的服务针对不同的用户而表现出不同的形式，有些只提供文</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/310.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-31</span> <a href="/news/309.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连做网站如何注意排版问题" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/309.html" target="_blank">大连做网站如何注意排版问题</a></span>
+                <span class="rel">20天前<u>&bull;</u>围观热度 6<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">　对很多站长来说，大连做网站很简单，也是对比容易的，可是想要做好网站的一些细节疑问就对比难，而且只要将一切细节做好了，才能够算得上是一个优异的网站。而对于网站建设中的一些细节，首要是以下几个方面。今日大连网站建设公司就来详细剖析一下几个要点的细节。　　第一、从网站层次构造上的细节剖析。在网站建设的过程中，对层次上的规划要分明，构造也要是合理的，这么就能够给用户一个杰出的体会。而页面的规划也要留意简</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/309.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-30</span> <a href="/news/308.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设之外贸网站设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/308.html" target="_blank">大连网站建设之外贸网站设计</a></span>
+                <span class="rel">21天前<u>&bull;</u>围观热度 9<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">第一、大连网站建设的目的一定要清楚明确好。外贸网站的建设目的究竟是什么呢？当然是为了满足用户，更好地为用户服务，同时增加外贸企业的效益。如果一个网站没有用户，那么这个网站就没有了存在的价值。不过要注意的是，用户的访问指的是有效的访问，而不是一进入到网站就关闭网站。因为有效的访问对网站来说才是有价值的。第二、网站建设的设计思路一定要清晰。其实要做好外贸网站建设，我们必须对网站建设的了解并不清楚。甚至</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/308.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-29</span> <a href="/news/307.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设之婚纱摄影网站设计" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/307.html" target="_blank">大连网站建设之婚纱摄影网站设计</a></span>
+                <span class="rel">22天前<u>&bull;</u>围观热度 6<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">　一个设计良好的婚纱摄影网站建设的关键并不是页面的设计有多么漂亮，功能有多么的强大，而是究竟有多少用户会关注网站。因此，要怎样建网站，特别是婚纱摄影网站，只要懂得用户的需求，并且在建设细节上做好，才可以从根本上留住用户，并且让用户原因留在网站上。如果你在大连网站建设的时候，充分考虑好了这些因素，并且在网站后期的运营中为用户提供人性化的服务，那么用户数量就会不断增加。但是这些都有一个大前提，就是网站</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/307.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-28</span> <a href="/news/306.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设如何搭配图片和字体" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/306.html" target="_blank">大连网站建设如何搭配图片和字体</a></span>
+                <span class="rel">23天前<u>&bull;</u>围观热度 5<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">有人说，大连网站建设的设计本来没有字体设计这一环节，因为在页面中能用到的中文字体非常有限，能用的也只要黑体、宋体、微软雅黑等，这给中文页面的美感带来了折损。比较英文对字体的酌量，页面上的中文字体显得太随意。当然，这种说法有必定的正确性，但咱们应当换个角度看。中文的页面中的字体的确是限制在这几款字体中，但不代表中文页面就没有字体设计这一环节。认识页面设计中的“字”首要，咱们简略将页面里的文字分为可更</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/306.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-27</span> <a href="/news/305.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设在内容建设上有哪些误区" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/305.html" target="_blank">大连网站建设在内容建设上有哪些误区</a></span>
+                <span class="rel">24天前<u>&bull;</u>围观热度 8<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">在大连网站建设中，内容的规划往往会呈现一些不如意的误区，今日咱们一起来剖析一下大连网站建设内容规划上的误区有哪些，以帮助各位十分好地完善网站建设。榜首、公司网站在flash方面规划的误区。公司网站在建设的过程中，假如在flash的运用中做的奇妙，对网站的视觉效果自然是好的。可是有些公司在建设网站的时分，常常会请求搭站公司运用flash元从来规划网站，认为只需这么规划出来的公司网站才是美观的。因而，</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/305.html"></a>&nbsp; </span>
+            </p>
+        </li>
+
+        <li>
+            <p class="left"><span class="date">03-25</span> <a href="/news/304.html" target="_blank" class="thumb"><img src="__PUBLIC__/static/new/images/cases/nopic.gif" alt="大连网站建设注意不要犯这些错误" style="width:233px; height:180px;"/></a></p>
+
+            <p class="right">
+                <span class="title"><a href="/news/304.html" target="_blank">大连网站建设注意不要犯这些错误</a></span>
+                <span class="rel">25天前<u>&bull;</u>围观热度 12<u>&bull;</u><a href='#'>行业动态</a></span>
+                <span class="summary">一提起网站建设，许多中小公司主脑海中便浮现出赤军漫绵长征路的场景。在许多中小公司主看来，网站建设是一件艰巨并且冗杂的工作，技能门槛高、资金消耗大、运营本钱高、进程绵长等等，让中小公司对网络搭站望而生畏。但在互联网年代，跟着科技的不断发展，网站建设的资金、技能、时刻等本钱也在不断下降，网站建设逐步呈现并遍及。今日咱们就来盘点一些公司在进行大连网站建设时，有哪些简单犯的过错，给咱们提个醒。第一，定位不</span>
+                <span class="tags"> <span class="glyphicon glyphicon-tag"></span> <a href="/news/304.html"></a>&nbsp; </span>
+            </p>
+        </li>-->
+
+    </ul>
+
+</section>
+
+<div class="dock">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+        <li class="tel"> <i></i>
+            <p>建站咨询热线<br />
+                400-0411-891</p>
+        </li>
+        <li class="im"> <i></i>
+            <p><a href="tencent://message/?Menu=yes&uin=47249271&Site=呼吸&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45" target="_blank">点我，建站咨询</a></p>
+        </li>
+    </ul>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?a821a161aa4214f5ff5b8ca372960ebb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

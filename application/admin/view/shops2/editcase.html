@@ -1,0 +1,124 @@
+<script src="__PUBLIC__/static/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!--引用UE文件-->
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/ueditor.all.js"> </script>
+<script type="text/javascript" src="__PUBLIC__/static/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script><div class="box box-primary">
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">修改案例</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('shops2/editcase', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+  
+	 <table class="table table-bordered table-striped">
+          <div class="form-group">
+            <!--<label for="case_id">分类id</label>-->
+            <input type="hidden" name="shop_id" value="{php}echo $data1['shop_id'];{/php}">
+          </div>
+          <tr class="form-group">
+            <td width="200px"><label for="shop_title">商品名称</label></td>
+            <td><input type="text" name="shop_title" id="shop_title" style="width:60%;" value="{php}echo $data1['shop_title'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="shop_matter">商品简介</label></td>
+            <td><input type="text" name="shop_matter" id="shop_matter" style="width:60%;" value="{php}echo $data1['shop_matter'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td width="200px"><label for="costprice">进价</label></td>
+            <td><input type="text" name="costprice" id="costprice" style="width:60%;" value="{php}echo $data1['costprice'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td width="200px"><label for="marketprice">市场价</label></td>
+            <td><input type="text" name="marketprice" id="marketprice" style="width:60%;" value="{php}echo $data1['marketprice'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td width="200px"><label for="buyingprice">售价</label></td>
+            <td><input type="text" name="buyingprice" id="buyingprice" style="width:60%;" value="{php}echo $data1['buyingprice'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="case_body">内容</label></td>
+            <td><script id="editor" name="shop_body" type="text/plain" style="width:80%;height:125px;" >{php}echo $data1['shop_body'];{/php}</script></td>
+          </tr>
+           <tr class="form-group">
+            <td><label for="catid">所属分类id{php}echo $data1['catid'];{/php}</label></td>
+            <td><select name="catid" id="catid" style="width:60%;">
+			<option value="">请选择</option>
+			{$options}
+			    </select>
+			</td>
+          </tr>
+		  <script>
+		  document.getElementById('catid').value="{php}echo $data1['catid'];{/php}";
+		  </script>
+		  <tr class="form-group">
+                <td><label for="exampleInputFile">缩略图</label></td>
+                <td><input type="file" id="thumb" name="thumb"></td>
+                <!--<p class="help-block">图片上传</p>-->
+          </tr>
+		  <tr class="form-group">
+            <td><label for="toptime">置顶时间</label></td>
+            <td><input type="text" name="toptime" id="toptime" style="width:60%;" value="{php}echo $data1['toptime'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="click">浏览次数</label></td>
+            <td><input type="text" name="click" id="click" style="width:60%;" value="{php}echo $data1['click'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="size">尺码</label></td>
+            <td><input type="text" name="size" id="size" style="width:60%;" value="{php}echo $data1['size'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="color">颜色</label></td>
+            <td><input type="text" name="color" id="color" style="width:60%;" value="{php}echo $data1['color'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="address">生产地</label></td>
+            <td><input type="text" name="address" id="address" style="width:60%;" value="{php}echo $data1['address'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="updater">信息修改人员</label></td>
+            <td><input type="text" name="updater" id="updater" style="width:60%;" value="{php}echo $data1['updater'];{/php}"></td>
+          </tr>
+		  <tr class="form-group">
+            <td><label for="updatetime">信息修改时间</label></td>
+            <td>{$time|date="Y-m-d H:i:s",###}</td>
+          </tr>
+            <tr class="form-group">
+                <td><label for="status">信息状态</label></td>
+                <td><select name="status">
+                <option value ="1" selected>正常</option>
+                <option value ="0">异常</option>
+                </select></td>
+            </tr>
+          <tr class="form-group">
+            <td><label for="createtime">信息录入时间</label></td>
+            <td><input type="text" name="createtime" id="createtime" value="{$time|date="Ymd",###}" style="width:60%;" value="{php}echo $data1['createtime'];{/php}"></td>
+          </tr>
+		  </table>
+		  
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="box-footer">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" class="btn btn-success radius" value="重置" style="background-color:red"/>
+        </div>
+
+          </form>
+        </div><!-- /.box-body -->
+</div>
+</div>
+<script>
+        <!--初始化UE-->
+        $(function() {
+            var ue = UE.getEditor('editor');
+        });
+
+        $(function() {
+            var ue = UE.getEditor('editor');
+        });
+         function doSubmit() {
+        document.getElementById('form-user-character-add').submit();
+    }
+</script>

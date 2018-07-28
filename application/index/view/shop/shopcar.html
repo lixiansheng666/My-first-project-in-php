@@ -1,0 +1,173 @@
+<!--
+Au<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>购物车页面</title>
+<!--css-->
+<link href="__PUBLIC__/static/shop/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="__PUBLIC__/static/shop/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__PUBLIC__/static/shop/css/font-awesome.css" rel="stylesheet">
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="__PUBLIC__/static/shop/js/jquery.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/static/shop/shopcar/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/static/shop/shopcar/js/shopping.js"></script>
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/shop/shopcar/css/base.css" />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/shop/shopcar/css/module.css"  />
+<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="__PUBLIC__/static/shop/js/main.js"></script>
+<!--search jQuery-->
+
+ <!--mycart-->
+<script type="text/javascript" src="__PUBLIC__/static/shop/js/bootstrap-3.1.1.min.js"></script>
+ <!-- cart -->
+<script src="__PUBLIC__/static/shop/js/simpleCart.min.js"></script>
+<!-- cart -->
+</head>
+<body>
+	<!--header-->
+		<div class="header">
+			<div class="header-top">
+				<div class="container">
+					 <div class="top-left">
+						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
+					</div>
+					<div class="top-right">
+					<ul>
+					    {php}if(session('?uuuid')):{/php}
+                        ({$Think.session.shopusername})<li><a href="{php}echo url('shop/out');{/php}">退出</a></li>
+						{php}else:{/php}  
+						<li><a href="./login.html">登录</a></li>
+						<li><a href="./registered.html"> 注册 </a></li>
+						 {php}endif;{/php}	
+					</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!--header-->
+		<!--banner-->
+		<div class="banner1">
+			<div class="container">
+				<h3><a href="{php}echo url('shop/index');{/php}">首页</a> / <span>购物车</span></h3>
+			</div>
+		</div>
+	<!--banner-->
+
+	<!--content-->
+		<div class="content">
+		
+		<div class="cart-items">
+
+			<!--头部开始-->
+<div class="header">
+	<h1>购物车</h1>
+	<a href="#" class="back"><span></span></a>
+	<a href="#" class=""></a>
+</div>
+<!--头部结束-->
+<div class="shopping">
+	
+	<div class="shop-group-item">
+		<div class="shop-name">
+			<input type="checkbox" class="check goods-check shopCheck">
+			<h4><a href="#">苹果专卖店</a></h4>
+			<div class="coupons"><span>领券</span><em>|</em><span>编辑</span></div>
+		</div>
+		{foreach $result as $v}
+	<form method="post" action="{php}echo url('shop/confirm');{/php}" id="form1">
+		<ul>
+			<li><input type="text" name="num_{$v.shop_id}" id='num_{$v.shop_id}' value="{$v.num}">
+				<div class="shop-info">
+				<a href="{php}echo url('shop/shopcardel',array('id'=>$v['shop_id']));{/php}"><div class="close1"> </div></a>
+					<input type="checkbox" class="check goods-check goodsCheck" name="items[]" value="{$v['shop_id']}">
+					<div class="shop-info-img"><a href="#"><img src="__PUBLIC__/static/Upload/header/{$v['createtime']}/{$v['thumb']}" /></a></div>
+					<div class="shop-info-text">
+						<h4>{$v.shop_title}</h4>
+						<div class="shop-brief"><span>尺码:{$v.size}</span><span>颜色:{$v.color}</span><span>生产地:{$v.address}</span></div>
+						<div class="shop-price">
+							<div class="shop-pices">￥<b class="price">{$v.costprice}.00</b></div>
+							<div class="shop-arithmetic">
+								<a href="javascript:;" class="minus" onclick="minus_goods_num({$v.shop_id});">-</a>
+									<span class="num" >{$v.num}</span>
+								<a href="javascript:;" class="plus" onclick="add_goods_num({$v.shop_id});">+</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		{/foreach}
+				
+		<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+	</div>
+</div>
+
+<div class="payment-bar">
+	<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+	<div class="shop-total">
+		<strong>总价：<i class="total" id="AllTotal">0.00</i></strong>
+		<span>减免：0.00</span>
+	</div>
+
+		<a  onclick="submit()" class="settlement">结算</a>
+</div>
+			
+</div>
+</div>
+</form>
+<script type="text/javascript">
+		function minus_goods_num(shop_id) {
+			var num = $("#num_"+shop_id).val();
+			if (num > 1) {
+				$("#num_"+shop_id).val(parseInt(num)-1);
+			}
+		}	
+		function add_goods_num(shop_id) {
+			var num = $("#num_"+shop_id).val();
+			$("#num_"+shop_id).val(parseInt(num)+1);
+			
+		}			
+</script>
+
+<script type="text/javascript">
+function submit(){
+	document.getElementById("form1").submit();
+}
+</script>
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2016 New Shop . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="__PUBLIC__/static/shop/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+<script>$(document).ready(function(c) {
+	$('.close1').on('click', function(c){
+		$('.cart-header').fadeOut('slow', function(c){
+			$('.cart-header').remove();
+		});
+		});	  
+	});
+</script>					
+</body>
+</html>

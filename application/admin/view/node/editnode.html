@@ -1,0 +1,72 @@
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">修改节点</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('node/editnode', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+           <div class="form-group">
+                <label for="id"></label>
+                <input type="hidden" name="id" id="id" value="{php}echo $result['id'];{/php}">
+            </div>
+          <div class="form-group">
+            <label for="name">节点名称</label>
+            <input type="text" name="name" id="name" value="{php}echo $result['name'];{/php}">
+          </div>
+		  <div class="form-group">
+            <label for="title">中文名称</label>
+            <input type="text" name="title" id="title" value="{php}echo $result['title'];{/php}">
+          </div>
+            <div class="form-group">
+                <label for="status">信息状态</label>
+                <select name="status" id="status">
+                <option value ="1" selected>启用</option>
+                <option value ="0">禁用</option>
+                <select>
+            </div>
+			<script>
+			document.getElementById('status').value="{php}echo $result['status'];{/php}";
+			</script>
+          <div class="form-group">
+            <label for="remark">备注</label>
+            <textarea name="remark" id="remark" cols="30" rows="5">{php}echo $result['remark'];{/php}</textarea>
+          </div>
+		  <div class="form-group">
+            <label for="sort">排序</label>
+            <input type="text" name="sort" id="sort" value="{php}echo $result['sort'];{/php}">
+          </div>
+		  <div class="form-group">
+            <label for="pid"></label>
+            <input type="hidden" name="pid" id="pid" value="{php}echo $catData['pid'];{/php}">
+          </div>
+		  <div class="form-group">
+            <label for="id">所属节点</label>
+            <input type="text" value="{php}echo $catData['title'] ? $catData['title'] : '根节点';{/php}"  style="text-align:center" disabled>
+          </div>
+		   <div class="form-group">
+                <label for="level">节点类型</label>
+                <select name="level" id="level">
+				<option value ="1" selected>应用</option>
+                <option value ="2">控制器</option>
+				<option value ="3">方法</option>
+                <select>
+            </div>
+            <script>
+			document.getElementById('level').value="{php}echo $result['level'];{/php}";
+			</script>
+
+          </form>
+
+        </div><!-- /.box-body -->
+
+        <div class="box-footer">
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    function doSubmit() {
+        document.getElementById('form-user-character-add').submit();
+    }
+</script>

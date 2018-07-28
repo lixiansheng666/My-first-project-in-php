@@ -1,0 +1,67 @@
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">增加新闻分类</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+         <form method="post" action="{php}echo url('cases/addcategory', []);{/php}"  class="form form-horizontal" id="form-user-character-add" enctype="multipart/form-data">
+
+           <!-- <div class="form-group">
+                <label for="catid">分类id</label>
+                <input type="text" name="catid" id="catid" >
+            </div>-->
+          <div class="form-group">
+            <label for="cat_name">分类名称</label>
+            <input type="text" name="cat_name" id="cat_name">
+          </div>
+		  <div class="form-group">
+            <label for="parent_id"></label>
+            <input type="hidden" name="parent_id" id="parent_id" value="{php}echo $catData['catid'];{/php}">
+          </div>
+          <div class="form-group">
+            <label for="catid">所属分类</label>
+            <input type="text" value="{php}echo $catData['cat_name']?$catData['cat_name']:'根分类';{/php}" disabled>
+          </div>
+            <div class="form-group">
+                <label for="type">类型</label>
+                <select name="type">
+                <option value ="0" selected>多内容</option>
+                <option value ="1">单页</option>
+                <select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">信息状态</label>
+                <select name="status">
+                <option value ="1" selected>正常</option>
+                <option value ="0">异常</option>
+                <select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleInputFile">缩略图</label>
+                <input type="file" id="thumb" name="thumb">
+                <p class="help-block">图片上传</p>
+            </div>
+
+
+            <!--<div class="form-group">
+                <label for="type">创建时间</label>
+                <input type="createtime" class="createtime" id="createtime" placeholder="xx年x月x日">
+            </div>-->
+          </form>
+
+        </div><!-- /.box-body -->
+
+        <div class="box-footer">
+            <input type="submit" class="btn btn-success radius" onclick="doSubmit();" value="确定"/>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    function doSubmit() {
+        document.getElementById('form-user-character-add').submit();
+    }
+</script>

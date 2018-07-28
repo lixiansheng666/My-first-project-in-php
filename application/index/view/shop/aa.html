@@ -1,0 +1,80 @@
+ function ddds(data){
+       		var list = eval('(' + data + ')');
+            var html='';
+               for (var i = 0; i < list.length; i++) {
+			    html +=  
+				'<div class="col-md-4 agile_ecommerce_tab_left">'	
+				+ '<div class="hs-wrapper">'
+				+ '<img src="__PUBLIC__/staticop/images/3.jpg" alt=" " class="img-responsive" />'
+			    + '<img src="__PUBLIC__/staticop/images/3.jpg" alt=" " class="img-responsive" />'
+			    + '<img src="__PUBLIC__/staticop/images/3.jpg" alt=" " class="img-responsive" />'
+			    + '<img src="__PUBLIC__/staticop/images/3.jpg" alt=" " class="img-responsive" />'
+
+				+ '<div class="w3_hs_bottom">'
+				+ '<ul><li><a href="javascript:;" id="'+list[i].shop_id+'" data-toggle="modal" data-target="#myModal6" onclick="getId(this);"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><></ul>'
+				+ '</div></div>' 
+				+ '<h5><a href="{php} echo url('indexop/single');{/php}"">'+list[i].shop_name+'</a></h5>'
+				+ '<div class="simpleCart_shelfItem">'
+				+ '<p><span>'+list[i].marketprice+'</span> <i class="item_price">'+list[i].spikeprice+'</i></p>'
+
+				+ '<form action="#" method="post">'
+				+ '<input type="hidden" name="cmd" value="_cart" />'
+				+ '<input type="hidden" name="add" value="1" /> '
+				+ '<input type="hidden" name="w3ls_item" value='+list[i].shop_name+' />' 
+				+ '<input type="hidden" name="amount" value='+list[i].spikeprice+' />'   
+				+ '<button type="submit" class="w3ls-cart">?????<tton>'
+				+ '</form>'  
+				+ '</div>'
+				+ '</div>';
+
+                
+			   }
+             $('#ssss').html(html);
+  
+       		
+       };
+
+
+       </script>
+	          
+        		<div id="myTabContent" class="tab-content"></div>
+                <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+							<div class="agile_ecommerce_tabs" id="ssss">
+							
+							
+	<!--content-->
+		<div class="content">
+			<div class="cart-items">
+				<div class="container">
+					 <h2>购物车商品总数()</h2>
+						<script>$(document).ready(function(c) {
+							$('.close1').on('click', function(c){
+								$('.cart-header').fadeOut('slow', function(c){
+									$('.cart-header').remove();
+								});
+								});	  
+							});
+					   </script>
+					   	{foreach $result as $v}
+					 <div class="cart-header">
+						 <a href="{php}echo url('shop/shopcardel',array('id'=>$v['shop_id']));{/php}"><div class="close1"> </div></a>
+						 <div class="cart-sec simpleCart_shelfItem">
+								<div class="cart-item cyc">
+									 <img src="__PUBLIC__/static/Upload/header/{$v['createtime']}/{$v['thumb']}" class="img-responsive" alt="">
+								</div>
+							   <div class="cart-item-info">
+								<h3>{$v.shop_title}<span>数量：{$v.shop_id}</span></h3>
+								<div class="delivery">
+									 <p>市场价 : ${$v.marketprice}</p>
+									 <span>优惠时间： 今晚12点之前</span>
+								</div>	
+							   </div>
+							   <div class="clearfix">
+								 <p>优惠后价格 : ${$v.costprice}</p>		
+                               </div>								 
+						  </div>
+					 </div>
+					 {/foreach}
+				</div>
+			</div>
+		</div>

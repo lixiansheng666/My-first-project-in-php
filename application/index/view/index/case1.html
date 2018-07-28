@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>大连做网站,大连网站建设,大连网络推广-领超科技大连网络营销专家</title>
+    <meta name="keywords" content="大连做网站公司,大连网站建设,大连网络推广,大连网站优化,大连网页设计,大连做网站,大连做网页,大连做推广" />
+    <meta name="description" content="大连做网站首选领超科技,多年大连网站建设(网页设计制作)、大连网络推广(网站优化营销)经验.精英技术团队,高品质服务,电话:4000411891 " />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="__PUBLIC__/static/new/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/new/style/inner.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="../../../../../templets/Scripts/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="__PUBLIC__/static/new/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/static/new/js/inner.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="box">
+        <a href="http://www.dllingchao.com/" title="大连领超科技发展有限公司"><img src="__PUBLIC__/static/new/images/cases/logo_cases.png" alt="大连网站设计" /></a>
+        <div class="wechat">
+            <img src="__PUBLIC__/static/new/images/cases/wechat_code.jpg" alt="扫描关注大连领超微信公众账号" class="wechat" /><p>扫一扫微信二维码<i></i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{php}echo url('index/index', []);{/php}">领超首页</a></li>
+                <li><a href="{php}echo url('index/caseslist', []);{/php}">设计案例</a></li>
+                <li class='active'><a href="{php}echo url('index/newslist', []);{/php}" style='color:white;'>文章动态</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        高端定制，品牌设计<br /><u>2009 - 2016</u>作品集<br /><a href="http://www.dllingchao.com/" target="_blank">大连领超科技发展有限公司</a>
+    </footer>
+</header>
+<section class="toolbar"> <a href="http://www.dllingchao.com/" title="返回首页" class="homelink"><span class="glyphicon glyphicon-chevron-left"></span></a><span class="switch glyphicon glyphicon-th-list"></span>
+    <div class="btnList">
+        <div class="link btn-group ml"><a href="caseslist.html" class="btn btn-default" title="大连领超网站建设作品集">作品集</a> </div>
+         <!--如果$n存在，让他继续执行，如果不存在，让他在本页面不执行-->
+         {php}       if ($p){       {/php}
+		<div class="link btn-group"> <a href="{php}echo url('index/case1',array('id'=>$p['case_id']));{/php}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span>PREV</a> </div>
+		{php}            }else{               {/php}
+		<div class="link btn-group"> <a href="###" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span>PREV</a> </div>
+		{php}            }                    {/php}
+		{php}        if ($n){                   {/php}
+		<div class="link btn-group"> <a href="{php}echo url('index/case1',array('id'=>$n['case_id']));{/php}" class="btn btn-default">NEXT<span class="glyphicon glyphicon-arrow-right"></span></a> </div>
+        {php}        }else{                     {/php} 
+		<div class="link btn-group"> <a href="###" class="btn btn-default">NEXT<span class="glyphicon glyphicon-arrow-right"></span></a> </div>
+		{php}            }                    {/php}
+	</div>
+</section>
+<section class="caseshow content">
+    <div class="caption">项目介绍</div>
+    <div class="words">
+	{foreach $result as $v}
+        <h1>{$v['case_title']}</h1>
+        <span class="rel">{$v['case_matter']}<u>·</u></span>
+        {/foreach}
+		<dl class="tags">
+            <dt>案例标签<span class="glyphicon glyphicon-tag"></span></dt>
+            <dd><a href="" target="_blank">{php}echo $result2['flag_name'];{/php}</a></dd>
+            <!--<dd><a href="" target="_blank">门户网站</a></dd>-->
+        </dl>
+    </div>
+    <div class="caption">设计欣赏</div>
+    <div class="demo" style="width:983px; height:auto; padding-bottom:30px;">
+        <p>{php}echo $case_body['case_body'];{/php}</p><script src="/inc/AspCms_VisitsAdd.asp?id=115"></script></p>
+    </div>
+	
+</section>
+<div class="dock">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+        <li class="tel"> <i></i>
+            <p>建站咨询热线<br />
+                400-0411-891</p>
+        </li>
+        <li class="im"> <i></i>
+            <p><a href="tencent://message/?Menu=yes&uin=47249271&Site=呼吸&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45" target="_blank">点我，建站咨询</a></p>
+        </li>
+    </ul>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?a821a161aa4214f5ff5b8ca372960ebb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

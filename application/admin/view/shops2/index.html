@@ -1,0 +1,101 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">
+            商品列表
+            <a class="label label-primary" href="{php}echo url('shops2/addlists', []);{/php}">增加商品</a>
+			<a class="label label-primary" href="javascript:;" onclick="datadel()"><font color="red">批量删除</font></a>
+        </h3>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+			 <th><input type="checkbox" id="check" />&nbsp;全选</th>
+                <th>商品编号</th>
+                <th>商品名称</th>
+				<th>内容简介</th>
+                <th>所属分类id(显示商品分类的分类id)</th>
+				<th>缩略图</th>
+				<th>置顶时间</th>
+				<th>浏览次数</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+			<form name="form2" role="form2" id="form2" method="post" action="{php}echo url('shops2/delalllists'){/php}" enctype="multipart/form-data" >
+			{foreach $result as $v}
+                <tr>
+				    <td><input type="checkbox" id="check" name="items[]" value="{$v.shop_id}"></td>
+                    <td>{$v.shop_id}</td>
+                    <td>{$v.shop_title}</td>
+                    <td>{$v.shop_matter}</td>
+                    <td>{$v.catid}</td>
+                    <td>{php}       if ($v['thumb'] == ''){       {/php}
+                        <img src="__PUBLIC__/static/Upload/header/20150403/timg.jpg"  height="100px" width="200px">
+                        {php}            }else{           {/php}
+                        <img src="__PUBLIC__/static/Upload/header/{$v['createtime']}/{$v['thumb']}" height="100px"/>
+                        {php}                }           {/php}
+					</td>
+					<td>{$v.toptime}</td>
+                    <td>{$v.click}</td>
+					<td>
+					<a href="{php}echo url('shops2/editcase',array("id"=>$v['shop_id']),'html');{/php}">修改</a>&nbsp;&nbsp;
+					<a href="{php}echo url('shops2/delcase', array("id"=>$v['shop_id']),'html');{/php}">删除</a>&nbsp;&nbsp;
+					</td>
+                </tr>
+            {/foreach}
+			</form>
+            </tbody>
+            <tfoot>
+                <!--<tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>-->
+            </tfoot>
+        </table>
+    </div><!-- /.box-body -->
+</div>
+<!--分页-->
+<div><tr>{$result->render(1)}</tr></div>
+<script type="text/javascript">
+document.getElementById('check').onclick=function()  
+        {  
+         // 获取当前页所有的复选框  
+            var checkElements=document.getElementsByName('items[]');  
+            if (this.checked) {  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked="checked";  
+                }  
+  
+            }  
+            else{  
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    checkElement.checked=null;  
+                }  
+            } 
+        } 
+function datadel() {
+            //批量删除事件
+            if (confirm('确认要删除吗？')) {
+
+                var checkElements=document.getElementsByName('items[]');  
+                var g = false;
+                for(var i=0;i<checkElements.length;i++){  
+                    var checkElement=checkElements[i];  
+                    if(checkElement.checked){
+                        g = true;
+                    }
+                }  
+             if(g){
+                 document.form2.submit();
+                }else {
+                 alert("请选择要删除的列表！");
+              }
+              }
+              }		
+</script>
