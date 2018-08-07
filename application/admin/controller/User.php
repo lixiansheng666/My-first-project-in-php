@@ -84,8 +84,8 @@ class User extends Backend
 		  }
 		$id = $this->request->param('id');
 		$result = Db::name('user')->where("`userid`=$id")->find();
-		  //sprint ($result);
-		  //die;
+//		  sprint ($result);
+//		  die;
 		$this->assign('result',$result);
 		$role = DB::name('role')->select();
 		$this->assign('role',$role);
